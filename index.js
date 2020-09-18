@@ -5,7 +5,7 @@ async function insert(){
        let result= fetch("https://studentsmentors.herokuapp.com/student",{
             method:"POST",
             body:JSON.stringify({"name":`${insertname}`}),
-            headers:{"Content-type": "application/json; charset=UTF-8"},{"mode":"no-cors"}
+            headers:{"Content-type": "application/json; charset=UTF-8"}
         })
         
     }
@@ -13,7 +13,7 @@ async function insert(){
         let result= fetch("https://studentsmentors.herokuapp.com/mentor",{
             method:"POST",
             body:JSON.stringify({"name":`${insertname}`}),
-            headers:{"Content-type": "application/json; charset=UTF-8"},{"mode":"no-cors"}
+            headers:{"Content-type": "application/json; charset=UTF-8"}
         })
         
     }
@@ -31,7 +31,7 @@ async function assign(){
         let result= fetch(`https://studentsmentors.herokuapp.com/studentsofmentor/${assignto}`,{
             method:"POST",
             body:JSON.stringify({"arr":`${array}`}),
-            headers:{"Content-type": "application/json; charset=UTF-8"},{"mode":"no-cors"}
+            headers:{"Content-type": "application/json; charset=UTF-8"}
         })
         document.getElementById("parentdiv").innerText="Assigned students to mentor"
     }
@@ -39,7 +39,7 @@ async function assign(){
         let result= fetch(`https://studentsmentors.herokuapp.com/mentorofstudent/${assignto}/${array}`,{
             method:"POST",
             
-            headers:{"Content-type": "application/json; charset=UTF-8"},{"mode":"no-cors"}
+            headers:{"Content-type": "application/json; charset=UTF-8"}
         })
         document.getElementById("parentdiv").innerText="Assigned mentor to student"
     }
@@ -56,7 +56,7 @@ function display(){
 async function getstudents(){
     
     try{
-        let result=await fetch("https://studentsmentors.herokuapp.com/students",{"mode":"no-cors"})
+        let result=await fetch("https://studentsmentors.herokuapp.com/students")
         let arr=await result.json()
         let parentdiv=document.createElement("div")
         if(arr.length==0)document.getElementById("parentdiv").innerText="Nothing to Display"
@@ -75,7 +75,7 @@ async function getstudents(){
 async function getmentors(){
     
     try{
-        let result=await fetch("https://studentsmentors.herokuapp.com/mentors",{"mode":"no-cors"})
+        let result=await fetch("https://studentsmentors.herokuapp.com/mentors")
         let arr=await result.json()
         
         let parentdiv=document.createElement("div")
@@ -97,7 +97,7 @@ async function getstudentsofmentor(){
     
     let id=document.getElementById("mentorid").value
     try{
-        let result=await fetch(`https://studentsmentors.herokuapp.com/studentsof/${id}`,{"mode":"no-cors"})
+        let result=await fetch(`https://studentsmentors.herokuapp.com/studentsof/${id}`)
         let arr=await result.json()
         if(arr.length==0)document.getElementById("parentdiv").innerText="Nothing to Display"
         else{

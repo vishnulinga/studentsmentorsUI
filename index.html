@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="index.js"></script>
+<style>
+    .select{
+        background-color: bisque;
+        border-radius: 5px;
+        padding: 5px;
+        width: 200px;
+        text-align-last: center;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <h3>Insert</h3>
+    </div>
+    <div class="row">
+        <div class="col-3">
+        <select id="insertselect" class="select">
+            <option value="student">Student</option>
+            <option value="mentor">Mentor</option>
+        </select>    
+        </div>
+              
+                <div class="col-7">
+                    <div class="input-group flex-nowrap">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text" id="namelabel">Name</span>
+                        </div>
+                        <input type="text" id="name" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
+                      </div>
+                </div>
+                <div class="col-2">
+                    <button type="button" class="btn btn-primary" onclick="insert()">Submit</button>
+                </div>
+              
+        </div>
+
+        
+    
+
+    <div class="row" style="margin-top: 40px;">
+        <h3>Assign</h3>
+    </div>
+    <div class="row">
+        <div class="col-3">
+        <select id="assignselect" class="select">
+            <option value="students">Students</option>
+            <option value="mentor">Mentor</option>
+        </select>    
+        </div>
+              
+                <div class="col-3">
+                    <div class="input-group flex-nowrap">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text" id="assignid">To ID</span>
+                        </div>
+                        <input type="text" id="id" class="form-control" placeholder="Mentor/Students " aria-label="Username" aria-describedby="addon-wrapping">
+                      </div>
+                </div>
+                <div class="col-4">
+                    <div class="input-group flex-nowrap">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text" id="arrayid">@</span>
+                        </div>
+                        <input type="text" id="array" class="form-control" placeholder="ex: 1,2,3" aria-label="Username" aria-describedby="addon-wrapping">
+                      </div>
+                </div>
+
+
+                <div class="col-2">
+                    <button type="button" class="btn btn-primary" onclick="assign()">Submit</button>
+                </div>
+              
+        </div>
+
+        <div class="row" style="margin-top: 40px;">
+            <h3>Display</h3>
+        </div>
+        <div class="row">
+            <div class="col-3">
+            <select id="displayselect" class="select">
+                <option value="students">All Students</option>
+                <option value="mentors">All Mentors</option>
+                <option value="studentsof">Students of</option>
+            </select>    
+            </div>
+                  
+                    <div class="col-7">
+                        <div class="input-group flex-nowrap">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text" id="studentsof">ID</span>
+                            </div>
+                            <input type="text" id="mentorid" class="form-control" placeholder="Mentor ID" aria-label="Username" aria-describedby="addon-wrapping">
+                          </div>
+                    </div>
+                    <div class="col-2">
+                        <button type="button" class="btn btn-primary" onclick="display()">Submit</button>
+                    </div>
+                  
+            </div>
+
+            <div class="row">
+                <div class="col-12" id="displayarea" style="background-color: cadetblue;text-align: center;margin-top: 40px;font:100px;">
+                    <div id="parentdiv" style="color: cornsilk;text-align: center;margin-left: auto;margin-right: auto;font-size:x-large"></div>
+
+                </div>
+            </div>
+    
+</div>
+
+
+</body>
